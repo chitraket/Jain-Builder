@@ -4,6 +4,7 @@ import FeatureContainer from '../components/FeatureContainer'
 import { FeatureContainerContactUsData } from '../data/FeatureContainerData'
 import { ContactUsData } from '../data/InfoSectionData'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import PageSeo from '../components/PageSeo'
 const ContactUs = () => {
   const mapStyles = {        
     height: "50vh",
@@ -12,8 +13,12 @@ const ContactUs = () => {
   const defaultCenter = {
     lat: 41.3851, lng: 2.1734
   }
+  React.useEffect(() => {
+    window.scrollTo({top:0})
+  }, [])
   return (
       <>
+      <PageSeo {...FeatureContainerContactUsData?.pageSeo}/>
         <FeatureContainer {...FeatureContainerContactUsData}/>
         <Contact {...ContactUsData}/>
         <LoadScript

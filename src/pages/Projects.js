@@ -1,12 +1,17 @@
 import React from 'react'
 import FeatureContainer from '../components/FeatureContainer'
+import PageSeo from '../components/PageSeo'
 import Project from '../components/Project'
-import { FeatureContainerB2BData } from '../data/FeatureContainerData'
+import { FeatureContainerB2BData, FeatureContainerProjectsData } from '../data/FeatureContainerData'
 
 const Projects = () => {
+  React.useEffect(() => {
+    window.scrollTo({top:0})
+  }, [])
   return (
     <>
-    <FeatureContainer {...FeatureContainerB2BData}/>
+    <PageSeo {...FeatureContainerProjectsData?.pageSeo}/>
+    <FeatureContainer {...FeatureContainerProjectsData}/>
     <Project/>
     </>
   )

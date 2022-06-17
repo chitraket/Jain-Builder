@@ -4,6 +4,7 @@ import InfoSection from '../components/InfoSection'
 import { FeatureContainerAboutUsData } from '../data/FeatureContainerData'
 import { aboutUsOne, aboutUsTwo } from '../data/InfoSectionData'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import PageSeo from '../components/PageSeo'
 const AboutUs = () => {
   const mapStyles = {        
     height: "50vh",
@@ -17,6 +18,7 @@ const AboutUs = () => {
   }, [])
   return (
     <>
+      <PageSeo {...FeatureContainerAboutUsData?.pageSeo}/>
       <FeatureContainer {...FeatureContainerAboutUsData}/>
       <InfoSection {...aboutUsOne}/>
       <InfoSection {...aboutUsTwo}/>
